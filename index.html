@@ -34,14 +34,14 @@
             transition: background-color 1s ease;
             background-image: url('https://cresol.com.br/wp-content/uploads/2022/04/Icone-03-300x300.png');
             background-color: rgba(245, 130, 32, 0.3);
-            background-repeat: no-repeat;
-            background-size: contain;
+            /* background-repeat: no-repeat; */
+            background-size: 7em;
         }
 
         #quiz-container {
             display: none;
             /* Inicialmente oculto */
-            background-color: rgba(255, 255, 255, 0.7);
+            background-color: rgba(255, 255, 255, 0.8);
             padding: 20px;
             border-radius: 10px;
             box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
@@ -83,12 +83,20 @@
         <h1 id="titulo">Quiz</h1>
         <p id="question-text"></p>
         <button id="option1">Opção 1</button>
+        <br>
         <button id="option2">Opção 2</button>
         <p id="score">Pontuação: 0</p>
-        <img style="display: none;" id="qrcode" src="Qrlogo-free.png" alt="">
+        <div style="display: none;" id="qrcode">
+            <img  src="Qrlogo-free.png" alt="">
+            <button id="reiniciar" onclick="reiniciar()" >Novo</button>
+        </div>
     </div>
 
     <script>
+        function reiniciar(){
+            location.reload();
+        }
+
         document.getElementById("start-button").addEventListener("click", startQuiz);
 
         function startQuiz() {

@@ -67,7 +67,8 @@
         button:hover {
             background-color: #D25400;
         }
-        #start-button{
+
+        #start-button {
             background-color: white;
             color: #F58220;
         }
@@ -75,13 +76,16 @@
 </head>
 
 <body>
-    <button id="start-button"><h1>Iniciar Quiz Cresol</h1></button>
+    <button id="start-button">
+        <h1>Iniciar Quiz Cresol</h1>
+    </button>
     <div id="quiz-container">
-        <h1>Quiz</h1>
+        <h1 id="titulo">Quiz</h1>
         <p id="question-text"></p>
         <button id="option1">Opção 1</button>
         <button id="option2">Opção 2</button>
         <p id="score">Pontuação: 0</p>
+        <img style="display: none;" id="qrcode" src="Qrlogo-free.png" alt="">
     </div>
 
     <script>
@@ -113,10 +117,12 @@
         let currentQuestion = 0;
         let score = 0;
 
+        const titulo = document.getElementById("titulo");
         const questionText = document.getElementById("question-text");
         const option1 = document.getElementById("option1");
         const option2 = document.getElementById("option2");
         const scoreText = document.getElementById("score");
+        const qrcode = document.getElementById("qroode");
 
         function showQuestion() {
             if (currentQuestion < questions.length) {
@@ -127,10 +133,12 @@
                 document.body.classList.remove("correct-answer", "incorrect-answer");
             } else {
                 // Exibição do resultado final
-                questionText.textContent = "Quiz finalizado!";
+                titulo.textContent = "Quiz finalizado!";
+                questionText.textContent = "";
                 option1.style.display = "none";
                 option2.style.display = "none";
                 scoreText.textContent = `Pontuação final: ${score} de 3`;
+                document.getElementById('qrcode').style.display = 'block';
                 // Restaurando a cor de fundo branca
                 // document.body.style.backgroundColor = "white";
                 document.body.classList.remove("correct-answer", "incorrect-answer");

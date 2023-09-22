@@ -73,13 +73,20 @@
             color: #F58220;
         }
 
-        #option1, #option2{
+        #option1,
+        #option2 {
             font-size: 18pt;
         }
 
-        #mensagem{
+        #mensagem {
             font-size: 14pt;
             /* display: none; */
+        }
+
+        @media (max-width: 770px) {
+            #quiz-container {
+                width: 80%;
+            }
         }
     </style>
 </head>
@@ -104,14 +111,14 @@
             <p id="msg">Leia o QRCode, se cadastre e concora a prêmios!</p>
         </div>
         <div style="display: none;" id="qrcode">
-            <img  src="Qrlogo-free.png" alt="">
+            <img src="Qrlogo-free.png" alt="">
             <br>
-            <button style="font-size: 18pt;" id="reiniciar" onclick="reiniciar()" >Novo</button>
+            <button style="font-size: 18pt;" id="reiniciar" onclick="reiniciar()">Novo</button>
         </div>
     </div>
 
     <script>
-        function reiniciar(){
+        function reiniciar() {
             location.reload();
         }
 

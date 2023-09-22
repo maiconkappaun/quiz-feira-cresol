@@ -124,18 +124,33 @@
         }
         const questions = [
             {
-                question: "Pergunta 1: Qual é a capital do Brasil?",
-                options: ["Brasília", "Rio de Janeiro"],
+                question: "Qual a 3º maior cooperativa de Crédito do Brasil?",
+                options: ["Cresol", "Outra"],
                 correctAnswer: 0
             },
             {
-                question: "Pergunta 2: Qual é o maior planeta do sistema solar?",
-                options: ["Terra", "Júpiter"],
+                question: "Qual instituição financeira distribui as sobras no final do exercício?",
+                options: ["Bancos", "Cooperativas"],
                 correctAnswer: 1
             },
             {
-                question: "Pergunta 3: Qual é o animal mais rápido do mundo?",
-                options: ["Guepardo", "Elefante"],
+                question: "Qual cooperativa de crédito prioriza as pessoas em seus negócios?",
+                options: ["Cresol", "Outra"],
+                correctAnswer: 0
+            },
+            {
+                question: "Qual instituição financeira é completa e oferece produtos e soluções essenciais?",
+                options: ["Cresol", "Outra"],
+                correctAnswer: 0
+            },
+            {
+                question: "Qual instituição financeira facilita sua vida com atendimentos digital e em agências físicas?",
+                options: ["Cresol", "Outra"],
+                correctAnswer: 0
+            },
+            {
+                question: "Qual cooperativa de crédito atua a 18 anos na região?",
+                options: ["Cresol Aliança", "Outra"],
                 correctAnswer: 0
             }
         ];
@@ -164,7 +179,7 @@
                 questionText.style.display = "none";
                 option1.style.display = "none";
                 option2.style.display = "none";
-                scoreText.textContent = `Pontuação final: ${score} de 3`;
+                scoreText.textContent = `Pontuação final: ${score} de 6`;
                 scoreText.style.fontSize = `18pt`;
                 document.getElementById('qrcode').style.display = 'block';
                 msg.style.display = 'block';
@@ -185,7 +200,7 @@
                 document.body.classList.add("incorrect-answer");
             }
             currentQuestion++;
-            scoreText.textContent = `Pontuação: ${score} de 3`;
+            scoreText.textContent = `Pontuação: ${score} de 6`;
             // Espera 1 segundo antes de mostrar a próxima pergunta
             setTimeout(showQuestion, 1000);
         }

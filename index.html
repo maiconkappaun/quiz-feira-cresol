@@ -72,6 +72,15 @@
             background-color: white;
             color: #F58220;
         }
+
+        #option1, #option2{
+            font-size: 18pt;
+        }
+
+        #mensagem{
+            font-size: 14pt;
+            /* display: none; */
+        }
     </style>
 </head>
 
@@ -81,14 +90,23 @@
     </button>
     <div id="quiz-container">
         <h1 id="titulo">Quiz</h1>
-        <p id="question-text"></p>
-        <button id="option1">Opção 1</button>
-        <br>
-        <button id="option2">Opção 2</button>
+        <div style="font-size: 18pt;">
+            <p id="question-text"></p>
+        </div>
+        <div>
+            <button id="option1">Opção 1</button>
+        </div>
+        <div>
+            <button id="option2">Opção 2</button>
+        </div>
         <p id="score">Pontuação: 0</p>
+        <div id="mensagem" style="display: none;">
+            <p id="msg">Leia o QRCode, se cadastre e concora a prêmios!</p>
+        </div>
         <div style="display: none;" id="qrcode">
             <img  src="Qrlogo-free.png" alt="">
-            <button id="reiniciar" onclick="reiniciar()" >Novo</button>
+            <br>
+            <button style="font-size: 18pt;" id="reiniciar" onclick="reiniciar()" >Novo</button>
         </div>
     </div>
 
@@ -131,6 +149,7 @@
         const option2 = document.getElementById("option2");
         const scoreText = document.getElementById("score");
         const qrcode = document.getElementById("qroode");
+        const msg = document.getElementById("mensagem");
 
         function showQuestion() {
             if (currentQuestion < questions.length) {
@@ -142,11 +161,13 @@
             } else {
                 // Exibição do resultado final
                 titulo.textContent = "Quiz finalizado!";
-                questionText.textContent = "";
+                questionText.style.display = "none";
                 option1.style.display = "none";
                 option2.style.display = "none";
                 scoreText.textContent = `Pontuação final: ${score} de 3`;
+                scoreText.style.fontSize = `18pt`;
                 document.getElementById('qrcode').style.display = 'block';
+                msg.style.display = 'block';
                 // Restaurando a cor de fundo branca
                 // document.body.style.backgroundColor = "white";
                 document.body.classList.remove("correct-answer", "incorrect-answer");
